@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The 2004 Indian Ocean Tsunami</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fa;--fg:#0b1b2b;--muted:#53657a;--card:#fff;--line:#dbe3ea;--acc:#0a7f9c;--acc2:#12b5a6;--hero:#06263a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061520;--fg:#e8f1f7;--muted:#92a7b8;--card:#0d2233;--line:#1b3447;--acc:#3cc4e0;--acc2:#4fe0c8;--hero:#03101a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#061520;--fg:#e8f1f7;--muted:#92a7b8;--card:#0d2233;--line:#1b3447;--acc:#3cc4e0;--acc2:#4fe0c8;--hero:#03101a;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--hero)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+a{color:var(--acc)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;align-items:center;gap:6px;padding:10px 20px;background:color-mix(in srgb,var(--hero) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#e8f1f7}
+nav b{font-family:Fraunces,Georgia,serif;margin-right:auto;white-space:nowrap}
+nav a{color:#b9cddb;text-decoration:none;font-size:14px;padding:6px 10px;border-radius:99px;transition:.25s;display:none}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.12)}
+@media(min-width:900px){nav a{display:block}}
+#tg{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:99px;width:34px;height:34px;cursor:pointer;font-size:15px}
+#bar{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:70}
+.hero{position:relative;background:radial-gradient(120% 90% at 70% 0,#0d4a66 0,var(--hero) 60%);color:#fff;padding:12vh 24px 0;overflow:hidden;min-height:92vh;display:flex;flex-direction:column}
+.wrap{max-width:1080px;margin:0 auto;width:100%}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--acc2);font-weight:600}
+.hero h1{font-size:clamp(40px,8vw,92px);margin:16px 0 20px;max-width:900px}
+.hero p{max-width:600px;color:#b9cddb;font-size:19px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:40px 0 90px;position:relative;z-index:2}
+.stat{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:18px;padding:18px 20px;backdrop-filter:blur(6px)}
+.stat strong{display:block;font:600 clamp(28px,4vw,42px)/1 Fraunces,Georgia,serif}
+.stat span{font-size:13px;color:#a9c0cf}
+.waves{position:absolute;left:0;right:0;bottom:-2px;height:110px;width:200%;animation:sw 14s linear infinite}
+.waves.b{animation-duration:22s;animation-direction:reverse;opacity:.5;bottom:8px}
+@keyframes sw{to{transform:translateX(-50%)}}
+section{padding:100px 24px}
+section.alt{background:color-mix(in srgb,var(--card) 70%,var(--bg))}
+h2{font-size:clamp(30px,5vw,52px);margin:10px 0 18px}
+.lead{max-width:680px;color:var(--muted);font-size:18px;margin:0 0 40px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(5,40,60,.35)}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.num{font:600 13px Inter;color:var(--acc);letter-spacing:.1em}
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 28px 62px}
+.tl li i{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--card);border:2px solid var(--acc);display:grid;place-items:center;font:600 15px Fraunces,serif;font-style:normal;color:var(--acc);transition:.4s}
+.tl li.in i{background:var(--acc);color:var(--bg)}
+.tl b{display:block;font-size:18px}
+.tl span{color:var(--muted)}
+.bars{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:110px 1fr 90px;gap:14px;align-items:center;font-size:15px}
+.track{height:14px;border-radius:99px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.row em{font-style:normal;text-align:right;font-weight:600}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+.tabs{display:inline-flex;gap:4px;padding:4px;border-radius:99px;background:var(--line);margin-bottom:24px;flex-wrap:wrap}
+.tabs button{border:0;background:none;color:var(--fg);font:500 14px Inter;padding:9px 18px;border-radius:99px;cursor:pointer;transition:.3s}
+.tabs button.on{background:var(--card);box-shadow:0 2px 10px rgba(0,0,0,.12);color:var(--acc)}
+.panel{display:none;animation:up .5s both}
+.panel.on{display:block}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.panel li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:15.5px}
+.cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.ba{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--card)}
+.ba.after{background:linear-gradient(160deg,var(--acc),var(--acc2));color:#04202b;border:0}
+.ba h3{margin-bottom:14px}
+.ba ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px}
+.warn{display:flex;gap:16px;align-items:center;margin-top:32px;padding:22px 26px;border-radius:20px;background:var(--hero);color:#e8f1f7}
+.warn b{color:var(--acc2)}
+blockquote{margin:40px 0 0;padding:28px 32px;border-left:4px solid var(--acc);background:var(--card);border-radius:0 20px 20px 0;font:400 clamp(19px,2.4vw,24px)/1.45 Fraunces,Georgia,serif}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted);font-size:15.5px}
+.gl{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.gl div{padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:15px}
+.gl b{color:var(--acc)}
+footer{padding:50px 24px;text-align:center;color:var(--muted);font-size:14px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+@media(max-width:560px){.row{grid-template-columns:80px 1fr 70px;font-size:13px}section{padding:72px 20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><b>Tsunami 2004</b><a href="#causes">Causes</a><a href="#impact">Impact</a><a href="#response">Response</a><a href="#prepare">Preparation</a><a href="#change">Change</a><a href="#views">Perspectives</a><a href="#ethics">Ethics</a><button id="tg" aria-label="Toggle theme">◐</button></nav>
+
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow">Natural disasters · Class project</div>
+<h1>The 2004 Indian Ocean Tsunami</h1>
+<p>On 26 December 2004, a powerful undersea earthquake off Sumatra sent waves across an entire ocean. This is how it happened, who it affected, and what changed.</p>
+<div class="stats">
+<div class="stat"><strong data-c="9.1" data-d="1">0</strong><span>Magnitude (est. 9.1–9.3)</span></div>
+<div class="stat"><strong data-c="230000">0</strong><span>Dead or missing (approx.)</span></div>
+<div class="stat"><strong data-c="14">0</strong><span>Countries affected</span></div>
+<div class="stat"><strong data-c="1.6" data-d="1">0</strong><span>Million displaced (1.6–1.7)</span></div>
+</div>
+</div>
+<svg class="waves b" viewBox="0 0 1440 110" preserveAspectRatio="none"><path fill="#3cc4e0" d="M0 60C120 20 240 20 360 60s240 40 360 0 240-40 360 0 240 40 360 0V110H0z"/></svg>
+<svg class="waves" viewBox="0 0 1440 110" preserveAspectRatio="none"><path style="fill:var(--bg)" d="M0 70C120 40 240 40 360 70s240 30 360 0 240-30 360 0 240 30 360 0V110H0z"/></svg>
+</header>
+
+<section id="overview"><div class="wrap">
+<div class="eyebrow rv">Overview</div><h2 class="rv">One earthquake, fourteen countries</h2>
+<p class="lead rv">Also called the Sumatra–Andaman earthquake and tsunami or the Boxing Day tsunami. Nearby coasts were hit within minutes; distant coasts, such as East Africa, within hours.</p>
+<div class="grid" id="regions"></div>
+<blockquote class="rv">The tsunami was a natural event, but human factors made the disaster worse: many people lived close to the coast, buildings were vulnerable, warning systems were limited and public awareness was low.</blockquote>
+</div></section>
+
+<section id="causes" class="alt"><div class="wrap">
+<div class="eyebrow rv">Causes</div><h2 class="rv">How the sea was set in motion</h2>
+<p class="lead rv">The quake struck the Sunda megathrust, a subduction zone where the Indo-Australian plate slides beneath the Burma microplate and the wider Sunda plate.</p>
+<ol class="tl" id="steps"></ol>
+<h3 class="rv" style="margin:50px 0 20px">Why was it so powerful?</h3>
+<div class="grid" id="why"></div>
+<p class="note rv">In deep water a tsunami’s wavelength can be hundreds of kilometres and it can travel at the speed of a jet aircraft, yet it can look small until it reaches shore.</p>
+</div></section>
+
+<section id="impact"><div class="wrap">
+<div class="eyebrow rv">Impact</div><h2 class="rv">Effects, from the shoreline to the household</h2>
+<div class="tabs rv" data-t="fx"><button class="on">Primary (direct)</button><button>Secondary (follow-on)</button></div>
+<div id="fx"></div>
+<h3 class="rv" style="margin:60px 0 24px">Reported deaths and missing</h3>
+<div class="bars" id="bars"></div>
+<p class="note rv">Approximate, from the NOAA tsunami database. These are not worldwide totals, and some national figures combine earthquake and tsunami deaths. Check against the original database before citing.</p>
+<h3 class="rv" style="margin:60px 0 20px">Who was hit hardest?</h3>
+<p class="lead rv" style="margin-bottom:0">Children lost caregivers and schooling. Older people and people with disabilities found it harder to evacuate. Poor fishing and farming families had little money to recover. Tourists and foreign workers did not know local warning signs. Experiences depended on location, resources and access to information.</p>
+</div></section>
+
+<section id="response" class="alt"><div class="wrap">
+<div class="eyebrow rv">Response</div><h2 class="rv">Relief, and its limits</h2>
+<p class="lead rv">Local residents often helped first, followed by governments, armed forces, the UN, the Red Cross and Red Crescent, and volunteers. Large donations did not automatically mean aid arrived quickly or fairly.</p>
+<div class="cols">
+<div class="card rv"><h3>What was needed</h3><p>Search and rescue, medical care, food, clean water and clothing, temporary shelter, sanitation supplies, and tracing and reuniting families.</p></div>
+<div class="card rv" style="--d:.1s"><h3>What went wrong</h3><p>Destroyed infrastructure, communication failures, hard logistics for remote islands, coordination among many agencies, unequal distribution and funding that faded with attention.</p></div>
+<div class="card rv" style="--d:.2s"><h3>Long-term recovery</h3><p>“Build back better”: safer homes and schools, repaired roads, replacement boats, counselling, hazard mapping and early warning. Recovery was uneven. In Aceh it also helped support the peace process.</p></div>
+</div>
+</div></section>
+
+<section id="prepare"><div class="wrap">
+<div class="eyebrow rv">Preparation</div><h2 class="rv">Could it have been prevented?</h2>
+<p class="lead rv">No. People cannot stop a tectonic earthquake. But they can stop a hazard from becoming a catastrophe through warnings, evacuation, education, safer buildings and careful planning.</p>
+<div class="grid" id="terms"></div>
+<h3 class="rv" style="margin:60px 0 12px">The Indian Ocean warning system</h3>
+<p class="lead rv">The Pacific had a regional warning system in 2004; the Indian Ocean did not. UNESCO’s Intergovernmental Oceanographic Commission coordinated a new one, set up in 2005 and fully operational in 2011.</p>
+<ol class="tl" id="stages"></ol>
+<div class="warn rv"><div style="font-size:34px">🌊</div><div><b>If you feel strong or long shaking near the coast, move to higher ground right away.</b> Don’t wait for an alert. The sea does not always pull back first.</div></div>
+<h3 class="rv" style="margin:60px 0 20px">What should individuals do?</h3>
+<div class="tabs rv" data-t="do"><button class="on">Before</button><button>During</button><button>After</button></div>
+<div id="do"></div>
+</div></section>
+
+<section id="change" class="alt"><div class="wrap">
+<div class="eyebrow rv">Continuity and change</div><h2 class="rv">Before and after December 2004</h2>
+<div class="cols">
+<div class="ba rv"><h3>Before</h3><ul><li>No Indian Ocean tsunami warning system</li><li>Little tsunami awareness in many communities</li><li>Limited regional coordination</li><li>Weak evacuation planning in places</li><li>Coastal development often ignored tsunami risk</li></ul></div>
+<div class="ba after rv" style="--d:.15s"><h3>After</h3><ul><li>Regional monitoring and warning arrangements</li><li>More education and community preparedness</li><li>Greater scientific and government cooperation</li><li>More evacuation maps, drills and hazard planning</li><li>More risk-informed planning, though gaps remain</li></ul></div>
+</div>
+<div class="card rv" style="margin-top:16px"><h3>What stayed the same</h3><p>Many people still live in exposed coastal areas. Poverty still limits preparation. Warning systems depend on steady funding. Some survivors still live with grief and hardship. Aid and rebuilding were not always shared fairly.</p></div>
+<blockquote class="rv">Technology alone is not enough: a warning can still fail if people cannot receive it, routes are blocked or families cannot afford to move.</blockquote>
+</div></section>
+
+<section id="views"><div class="wrap">
+<div class="eyebrow rv">Perspectives</div><h2 class="rv">Many ways to see one event</h2>
+<div id="pv"></div>
+<p class="lead rv" style="margin-top:30px">Was it simply a natural catastrophe? The hazard was natural, but the scale of the disaster also depended on human conditions. That does not mean victims were to blame: the quake was exceptionally powerful and some places had only minutes.</p>
+</div></section>
+
+<section id="ethics" class="alt"><div class="wrap">
+<div class="eyebrow rv">Ethics and environment</div><h2 class="rv">Responsibility after the waves</h2>
+<div class="grid" id="eth"></div>
+<h3 class="rv" style="margin:60px 0 20px">Environmental impacts</h3>
+<div class="grid" id="env"></div>
+<p class="lead rv" style="margin:30px 0 0">Mangroves, reefs and dunes can reduce some impacts, but they cannot guarantee protection against a huge tsunami. They should complement warnings and evacuation planning, not replace them.</p>
+</div></section>
+
+<section id="conclusion"><div class="wrap">
+<div class="eyebrow rv">Conclusion</div><h2 class="rv">The lesson</h2>
+<blockquote class="rv">Although people cannot prevent a major earthquake or stop every tsunami, they can reduce deaths through early warnings, education, protection of vulnerable people and planning for safer, more sustainable recovery.</blockquote>
+<h3 class="rv" style="margin:60px 0 20px">Glossary</h3>
+<div class="gl" id="gl"></div>
+</div></section>
+<footer>Class project on natural disasters · Study notes edited for Grade 11 · Check figures against original sources before citing.</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const cards=(id,a)=>{$(id).innerHTML=a.map((x,i)=>`<div class="card rv" style="--d:${i%3*.08}s"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")};
+cards("#regions",[["Indonesia","Aceh, in northern Sumatra, had the greatest destruction and loss of life."],["Sri Lanka","Coastal communities were devastated, especially in the east, south and southwest."],["India","Tamil Nadu, Andhra Pradesh, Kerala and the Andaman and Nicobar Islands."],["Thailand","Phuket, Phang Nga and other Andaman Sea coasts, including tourist areas."],["Maldives","Low-lying islands flooded, damaging homes, infrastructure and freshwater."],["Somalia & East Africa","Waves travelled thousands of kilometres and still caused deaths and damage."]]);
+cards("#why",[["Magnitude","One of the largest earthquakes ever recorded with instruments."],["Rupture length","At least 1,300 km of plate boundary moved (estimates vary)."],["Seafloor displacement","A huge volume of water was pushed."],["Wave travel","Energy spread across the whole ocean."],["Coastal shape","Bays, harbours and shallow shelves changed local wave heights."],["Low-lying settlements","Many communities sat only a short distance above sea level."]]);
+cards("#terms",[["Hazard","The potentially destructive event itself: the tsunami."],["Exposure","People and buildings located where flooding can happen."],["Vulnerability","How easily people and structures can be harmed."],["Disaster risk","The chance of harm when a hazard meets exposed, vulnerable communities."]]);
+cards("#eth",[["Fair distribution of aid","Aid should go where need is greatest, not where there is wealth, influence or media attention."],["Government responsibility","Invest in monitoring and warnings, educate the public, enforce building standards and keep systems running."],["Dignity and privacy","Ethical reporting seeks consent, avoids sensationalism and shows local resilience, not only helplessness."],["Relocation and land rights","Moving people from danger can cut them off from fishing grounds, jobs and community. It needs consultation and fair compensation."],["International responsibility","Because tsunamis cross borders, cooperation is part of protecting shared safety, not only charity."]]);
+cards("#env",[["Coastal ecosystems","Mangroves, reefs, seagrass, wetlands and dunes were damaged or displaced."],["Saltwater contamination","Wells, groundwater and soil were salted. Small islands were hit hardest."],["Pollution and waste","Floodwater carried sewage, rubbish and fuel. Poor debris disposal could add harm."],["Wildlife and biodiversity","Reef and mangrove loss reduced fish nursery habitat. Some habitats recovered, others needed restoration."]]);
+$("#steps").innerHTML=[["Stress built up","Parts of the fault were locked while the plates kept pushing."],["The fault ruptured","The stress was released along at least 1,300 km of boundary."],["The seafloor moved","Large areas were pushed up or dropped down, displacing the water above."],["Tsunami waves formed","The displaced water spread outward as long waves."],["The waves reached shallow water","They slowed, grew taller and caused destructive flooding and strong currents."]].map((x,i)=>`<li class="rv"><i>${i+1}</i><b>${x[0]}</b><span>${x[1]}</span></li>`).join("");
+$("#stages").innerHTML=[["Detect the earthquake","Seismic stations find its location, depth and magnitude."],["Measure ocean changes","Sea-level gauges and deep-ocean sensors confirm a tsunami."],["Estimate the danger","Computer models predict arrival times and threatened areas."],["Issue warnings","Authorities send alerts through many channels."],["Evacuate and respond","People move to high ground or designated safe buildings."]].map((x,i)=>`<li class="rv"><i>${i+1}</i><b>${x[0]}</b><span>${x[1]}</span></li>`).join("");
+$("#bars").innerHTML=[["Indonesia",167540],["Sri Lanka",35322],["India",16269],["Thailand",8212]].map(x=>`<div class="row rv"><span>${x[0]}</span><div class="track"><div class="fill" data-w="${x[1]/167540*100}"></div></div><em>${x[1].toLocaleString("en")}</em></div>`).join("");
+const T={fx:[["Coastal flooding and strong currents","Destroyed houses and public buildings","Deaths and serious injuries","Damaged roads, bridges and ports","Destroyed fishing boats and equipment","Damaged power and water systems"],["Homelessness and displacement","Disease in overcrowded shelters","Lost jobs and household income","Disrupted education and healthcare","Food insecurity and poverty","Trauma and family separation"]],
+do:[["Find out if your home, school or workplace is in a hazard zone.","Learn evacuation routes and where the high ground is.","Prepare water, food, medication, a flashlight and documents.","Practise evacuating with family."],["Leave immediately on natural warning signs or an official warning.","Go inland or uphill, or to a tsunami evacuation building.","Stay away from beaches, rivers and harbours.","Don’t return after the first wave: later ones can be larger."],["Follow official instructions before going back.","Avoid damaged buildings, electrical hazards and floodwater.","Use safe drinking water.","Check on vulnerable neighbours when it is safe."]]};
+for(const k in T){$("#"+k).innerHTML=T[k].map((l,i)=>`<div class="panel rv ${i?"":"on"}"><ul>${l.map(t=>`<li>${t}</li>`).join("")}</ul></div>`).join("")}
+document.querySelectorAll(".tabs").forEach(t=>t.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const bs=[...t.children],i=bs.indexOf(b),ps=document.querySelectorAll("#"+t.dataset.t+" .panel");bs.forEach((x,j)=>x.classList.toggle("on",j==i));ps.forEach((p,j)=>{p.classList.toggle("on",j==i);p.classList.add("in")})}));
+$("#pv").innerHTML=[["Survivors and local communities","A personal tragedy. Priorities were finding missing family, safe housing and work. Local stories about dangerous waves helped some people recognize danger."],["Scientists and emergency experts","An extraordinary megathrust earthquake. The shared lesson: science must connect to practical action."],["Governments","Balanced rescue, services and rebuilding. No government can manage a cross-border hazard alone."],["Humanitarian organizations","Focused on lives, shelter, child protection and clean water. Learned the need for coordination and aid based on need."],["Environmental groups","Stressed damage to mangroves, reefs, wetlands and freshwater, and argued for recovery that restores ecosystems."],["Economists and businesses","Looked at lost assets, tourism, fishing and rebuilding costs, and how to rebuild tourism more safely."]].map(x=>`<details class="rv"><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join("");
+$("#gl").innerHTML=[["Tectonic plates","Large moving pieces of the Earth’s outer shell."],["Subduction zone","Where one plate slides beneath another."],["Megathrust","The huge fault surface where the biggest earthquakes occur."],["Magnitude","A measure of an earthquake’s size."],["Inundation","Flooding of land by water."],["Wave propagation","How a wave travels and spreads."],["Mitigation","Actions that reduce the harm from a hazard."],["Resilience","The ability to withstand and recover from disaster."]].map(x=>`<div class="rv"><b>${x[0]}</b> · ${x[1]}</div>`).join("");
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");const f=e.target.querySelector(".fill");if(f)f.style.width=f.dataset.w+"%";io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(x=>io.observe(x));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,end=+el.dataset.c,dp=+el.dataset.d||0,t0=performance.now();const f=t=>{const p=Math.min((t-t0)/1800,1),v=end*(1-Math.pow(1-p,3));el.textContent=(dp?v.toFixed(dp):Math.round(v).toLocaleString("en"));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f);cio.unobserve(el)}));
+document.querySelectorAll("[data-c]").forEach(x=>cio.observe(x));
+const bar=$("#bar"),links=[...document.querySelectorAll("nav a")],secs=links.map(a=>$(a.getAttribute("href")));
+addEventListener("scroll",()=>{const h=document.documentElement;bar.style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+"%";let c=-1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.4)c=i});links.forEach((a,i)=>a.classList.toggle("on",i==c))},{passive:true});
+$("#tg").onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+</script>
+</body>
+</html>
